@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Prepared by Shahdad -->
+    <title> BTI425-Week1</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        //Create the XHR object
+        var xhttp = new XMLHttpRequest();
+        //Open the file
+        xhttp.open("GET", "books.xml", false);
+        //Send the request
+        xhttp.send();
+        // Read data
+        xmlDoc = xhttp.responseXML;
+
+        //Activity 1
+        act1 = xmlDoc.getElementsByTagName("title")[0].innerHTML;
+        console.log(act1);
+
+        //Activity 2
+        categoryValue = xmlDoc.getElementsByTagName("book");
+        for (i = 0; i < categoryValue.length; i++) {
+            titleValue = xmlDoc.getElementsByTagName("title")[i].innerHTML;
+            console.log("The category for " + titleValue + " is " + categoryValue[i].getAttribute("category") + '.');
+        }
+
+    </script>
+
+</body>
+
+</html>

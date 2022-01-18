@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- prepared by: Prof. Shahdad
+  Name: Jaan Javed
+  Date of Submission: 1/18/2022 -->
+  <title>BTI425</title>
+  <style>
+    #box1 {
+      width: 300px;
+      height: 200px;
+      background-color: orange;
+    }
+  </style>
+  <!-- Adding jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // Function is usable once document is fully loaded
+    $(document).ready(function () {
+      //select the second paragraph element on the page to modify the css
+      $("P:eq(1)").css({
+        // Change background color and width/height
+        "background-color": "red",
+        width: "300px",
+        height: "200px"
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>IWEB422 - jQuery</h1>
+  <p>This is Paragraph 1</p>
+  <ul>
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </li>
+  </ul>
+  <p>This is Paragraph 2</p>
+  <div id="box1">
+    This is Box 1
+  </div>
+</body>
+
+</html>

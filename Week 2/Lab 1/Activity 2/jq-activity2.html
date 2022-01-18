@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- prepared by: Prof. Shahdad
+  	Name: Jaan Javed
+  	Date of Submission: 1/18/2022 -->
+	<title>BTI425</title>
+
+	<!-- Adding jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+		// Function is usable once document is fully loaded
+		$(document).ready(function () {
+			// Handle onclick event
+			$("button").on("click", function () {
+				// Using an AJAX request to get the data from the json file
+				$.getJSON('jq-activity2-data.json', function (data) {
+					//Display the name of the first record in the data
+					$("#id").html(data.p1.name);
+					// Iterate over the data using $.each, displaying all the data from the json file to the screen
+					$.each(data, function () {
+						$.each(this, function (name, value) {
+							$("#id2").append(name + ' = ' + value + '<br>');
+						});
+					});
+
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<p id="id"></p>
+	<p id="id2"></p>
+	<button id="btn">
+		Click Me
+	</button>
+</body>
+
+</html>

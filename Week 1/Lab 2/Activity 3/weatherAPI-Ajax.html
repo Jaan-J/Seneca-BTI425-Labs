@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<!-- prepared by: Shahdad -->
+
+<head>
+  <title> BTI425 </title>
+
+<body>
+
+  <h1>Ajax --> JSON data</h1>
+
+  <button type="button" onclick="loadDoc()">Parse JSON data</button>
+  <br><br>
+  <p id="demo"></p>
+
+  <script>
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          myFunction(this);
+        }
+      };
+      xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Toronto,ON,CA&units=metric&appid=a6152bd209b07d413fc266b55624d02a", true);
+      xhttp.send();
+    }
+    function myFunction(json) {
+      var jsonDoc = json.responseText;
+      var myObj = JSON.parse(jsonDoc);
+      document.getElementById("demo").innerHTML = "The weather in Toronto is " + myObj.main.temp + " degrees Celsius.";
+    }
+  </script>
+
+</body>
+
+</html>
